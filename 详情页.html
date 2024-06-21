@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简单手机网页示例</title>
+    <style>
+    /* 移除图片浮动属性 */
+.header-image {
+    margin-right: 20px; /* 图片和文字之间的间隔 */
+}
+
+/* 设置header为Flexbox容器 */
+header {
+    display: flex;
+    align-items: center; /* 垂直居中对齐 */
+    justify-content: center; /* 水平居中对齐 */
+    flex-direction: row; /* 设置为行方向 */
+    padding: 20px;
+    text-align: center;
+}
+
+/* 其他样式保持不变 */
+
+/* 确保header背景色和其他元素一致 */
+body, header, footer {
+    background-color: rgba(198, 255, 253, 0.32); /* 统一使用RGBA设置背景色 */
+    margin: 0;
+    padding: 0;
+}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .single-photo {
+            text-align: center; /* 使图片在容器中居中显示 */
+            margin: 20px 0; /* 上下边距 */
+        }
+
+        .single-photo img {
+            width: 411px; /* 设置图片宽度为411px */
+            height: 161px; /* 设置图片高度为161px */
+            object-fit: cover; /* 保持图片比例，内容可能会被裁剪 */
+            border-radius: 8px; /* 圆角边框 */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 轻微的阴影 */
+        }
+        .article {
+            margin-top: 20px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        .article-title {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center; /* 添加此行以居中 h1 标题 */
+        }
+
+        .article-meta {
+            display: flex; /* 使用Flexbox布局 */
+            justify-content: space-between; /* 元素之间的间隔平均分布 */
+            align-items: center; /* 垂直居中对齐 */
+            padding: 10px 0; /* 上下内边距 */
+            border-bottom: 1px solid #ccc; /* 添加横线 */
+            text-align: center; /* 确保元信息左对齐 */
+            margin-bottom: 20px; /* 增加底部边距以便看到横线 */
+        }
+
+        .article-date {
+            margin-right: 20px;
+        }
+
+        .article-content {
+            width: 400px;    /* 设置宽度为362px */
+            height: 308px;   /* 设置高度为308px */
+            margin: 20px auto; /* 添加外边距 */
+            padding: 10px;    /* 如果需要内边距 */
+            box-sizing: border-box; /* 边框计算在尺寸内 */
+            overflow: auto;   /* 如果内容超出，添加滚动条 */
+        }
+        .article-content p {
+            margin: 0 0 10px; /* 设置段落间距 */
+            line-height: 1.6;  /* 设置行高 */
+            /* 其他段落样式 */
+        }
+
+        .article-footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 12px;
+            color: #999;
+        }
+        .article-views {
+            margin-right: 10px;     /* 为每个元素右侧添加外边距，除了最后一个元素 */
+            text-align: left;       /* 文本左对齐 */
+        }
+        .article-views {
+            margin-right: 0;
+        }
+          /* 添加的导航链接样式 */
+        .nav-links {
+            margin-top: 30px;
+            padding: 10px 20px;
+            border-top: 1px solid #ccc; /* 上边框线 */
+            font-size: 14px;
+            color: #333;
+            text-align: left; /* 使链接内容居左 */
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            display: block; /* 使链接独占一行 */
+            margin: 5px 0; /* 链接之间的间距 */
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* 确保链接在较大屏幕上也不超过容器宽度 */
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: auto;
+        }
+       
+      
+        .footer-image {
+            position: absolute; /* 绝对定位图片 */
+            bottom: 0px; /* 图片底部与色块底部对齐 */
+            left: 50%; /* 图片水平居中 */
+            transform: translateX(-50%); /* 使用左移50%来居中图片 */
+            width: 50px; /* 根据需要设置图片宽度 */
+            height: 50px; /* 高度自适应 */
+        }
+        .footer-info {
+            text-align: center; /* 文本居中 */
+            padding: 20px; /* 内边距 */
+            background-color: rgba(50, 165, 158, 0.44); /* 背景颜色 */
+            color: white; /* 文字颜色 */
+            font-size: 14px; /* 字体大小 */
+            margin-top: 20px; /* 与上一个内容块的间距 */
+        }
+
+        .footer-info address {
+            margin: 0; /* 移除地址元素的外边距 */
+            font-style: normal; /* 地址字体不使用倾斜 */
+        }
+
+        .footer-info a {
+            text-decoration: none; /* 链接无下划线 */
+            color: inherit; /* 链接颜色继承 */
+        }
+
+        .footer-info a:hover {
+            text-decoration: underline; /* 鼠标悬停时链接有下划线 */
+        }
+        .icon-address, .icon-email {
+            display: inline-block;
+            width: 24px; /* 图标宽度 */
+            height: 24px; /* 图标高度 */
+            margin-right: 8px; /* 图标与文本之间的间隔 */
+            vertical-align: middle; /* 垂直居中对齐 */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <!-- 图片使用flex布局对齐 -->
+            <div style="display: flex; align-items: center;">
+                <a href="首页.html">
+                    <img src="学校logo.png" alt="学校logo" class="header-image" style="width: 236px; height: auto;">
+                </a>
+                <img src="组合 51.png" alt="描述性文字" class="header-image" style="width: 127px; height: auto;">
+                
+            </div>
+            <nav style="margin-left: auto; /* 将导航链接放到右侧 */">
+                <a href="导航页.html"> <!-- 替换 '你的页面链接.html' 为实际页面链接 -->
+                    <img src="汉堡图标.png" alt="菜单" class="header-image" style="width: 35px; height: 35px;">
+                </a>
+            </nav>
+        </header>
+        <div class="single-photo">
+            <img src="绿叶.jpg" alt="特色照片">
+        </div>
+        <div class="article">
+            <h1 class="article-title">校领导带队赴西湖大学调研交流</h1>
+            <div class="article-meta">
+                <span class="article-date">日期：2020/5/13</span>
+                <span class="article-author">作者：人事处</span>
+                <span class="article-views">浏览量：999</span>
+            </div>
+            <div class="article-content">
+                <p>5月10日，副校长马国进带领发展规划处、人事处（人才办）一行赴西湖大学调研交流。西湖大学副校长、学校秘书长朱晓芸，学校副秘书长、人力资源部主任、党委教师工作部部长田晓萍等接待了马国进一行。双方围绕省级人工智能平台建设、人才育引、人才薪酬支持等内容开展座谈交流。</p>
+               <p>会上，朱晓芸代表西湖大学对马国进一行来访表示欢迎，感谢学校对西湖大学发展建设的支持，重点介绍了西湖大学的办学理念、发展历程、平台建设、人才育引、师资队伍建设、人才薪酬支持等基本情况。
+            </p>
+            </div>
+        </div>
+        <div class="nav-links container">
+            <a href="#">上一条：沿着总书记的足迹，探寻浙江高质量发展密码</a>
+            <a href="#">下一条：学校召开海洋与量子技术（国防领域）专题研讨会</a>
+        </div>
+        <div class="footer-info">
+            <img src="校徽.png" alt="描述性文字" class="footer-image">
+            <div>
+                <img src="地址图标.png" alt="地址图标" class="icon-address">
+                地址：浙江省杭州市钱塘区
+            </div>
+            <!-- 邮箱信息 -->
+            <div>
+                <img src="邮箱图标.png" alt="邮箱图标" class="icon-email">
+                邮箱：cbx@edu.com
+            </div>
+            <!-- 学校和学院链接 -->
+            <div class="links">
+                <a href="#">杭州电子科技大学</a> |
+                <a href="#">人文艺术与数字媒体学院</a> |
+                <a href="#">数字杭电</a>
+            </div>
+        </div>
+        <!-- 主内容和页脚保持不变 -->
+</body>
+</html>

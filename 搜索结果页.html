@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简单手机网页示例</title>
+    <style>
+    /* 移除图片浮动属性 */
+.header-image {
+    margin-right: 20px; /* 图片和文字之间的间隔 */
+}
+
+/* 设置header为Flexbox容器 */
+header {
+    display: flex;
+    align-items: center; /* 垂直居中对齐 */
+    justify-content: center; /* 水平居中对齐 */
+    flex-direction: row; /* 设置为行方向 */
+    padding: 20px;
+    text-align: center;
+}
+
+/* 其他样式保持不变 */
+
+/* 确保header背景色和其他元素一致 */
+body, header, footer {
+    background-color: rgba(198, 255, 253, 0.32); /* 统一使用RGBA设置背景色 */
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(198, 255, 253, 0.32); /* 现有背景色 */
+    background-image: url('背景体育馆.png'); /* 背景图片路径 */
+    background-repeat: no-repeat; /* 背景图片不重复 */
+    background-position: bottom center; /* 背景图片居中显示 */
+    background-attachment: fixed; /* 背景图片固定，不随滚动条滚动 */
+    background-size: cover; /* 背景图片覆盖整个元素 */
+    background-blend-mode: multiply; /* 背景图片与背景色混合模式 */
+    background-size: 420px 207px; /* 指定背景图片的大小 */
+}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0 15px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .main-content {
+            padding: 20px;
+        }
+        footer {
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        header h1 {
+    display: inline-block; /* 使标题内联显示 */
+    vertical-align: middle; /* 垂直居中对齐 */
+}
+.container {
+            max-width: 600px;
+            margin: auto;
+        }
+        header {
+            text-align: center;
+            /* 其他样式保持不变 */
+        }
+        .image-container {
+            position: relative;
+            width: 100%;
+            max-width: 430px;
+            margin: auto; /* 居中图片容器 */
+            overflow: hidden;
+        }
+        .image-slide {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .image {
+            width: 100%;
+            flex-shrink: 0;
+            display: block;
+            cursor: pointer; /* 鼠标悬停时显示为可点击状态 */
+        }
+       .main-content {
+            text-align: center; /* 文本水平居中 */
+            /* 其他样式保持不变 */
+        }
+
+        .main-content p {
+            text-align: center; /* 确保段落文本水平居中 */
+            margin: 20px 0; /* 段落外边距 */
+            /* 使用 text-decoration 属性添加下划线，它会自动与文本长度一致 */
+            text-decoration: underline;
+            text-decoration: underline solid #333; /* 指定下划线样式、颜色 */
+            text-underline-offset: 10px;
+        }
+        .white-panel {
+            background-color: white; /* 白色背景 */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 轻微的阴影 */
+            border-radius: 8px; /* 圆角边框 */
+            width: 430px; /* 板块宽度 */
+            max-width: 600px; /* 最大宽度限制 */
+            margin: 20px auto; /* 水平居中，外边距 */
+            overflow: hidden; /* 确保内容不会超出板块 */
+            display: flex; /* 使用flex布局 */
+            align-items: flex-start; /* 垂直对齐方式 */
+            position: relative; /* 为放大效果设置相对定位 */
+        }
+
+        .panel-image {
+            max-width: 30%; /* 图片最大宽度，根据需要调整 */
+            height: auto; /* 高度自适应 */
+            margin: 20px 20px 20px 20px; /* 左边距14像素，右边距20像素 */
+            transition: transform 0.3s ease, border-radius 0.3s ease; /* 平滑过渡效果 */
+            border-radius: 5px; /* 给图片添加圆角 */
+        }
+        .panel-image:hover {
+            transform: scale(1.2); /* 鼠标悬停时放大图片 */
+            border-radius: 25px; /* 鼠标悬停时可以增加圆角的半径 */
+        }
+
+        .white-panel p:first-of-type {
+            font-size: 13px;
+            width: 223px;
+            transition: transform 0.3s ease; /* 平滑过渡效果 */
+        }
+
+        /* 第二个段落的字号 */
+        .white-panel p:last-of-type {
+            font-size: 10px;
+            width: 280px;
+        }
+        .white-panel {
+    display: flex;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    width: 430px;
+    height: 120px;
+    max-width: 430px; /* 根据需要调整最大宽度 */
+    margin: 20px auto;
+    overflow: hidden;
+    padding: 20px; /* 内边距 */
+}
+
+.panel-image {
+    max-width: 80px; /* 图片最大宽度，根据需要调整 */
+    height: 80px;
+    margin-left: 20px; /* 照片与文本之间的间隔 */
+    border-radius: 5px; /* 圆角边框 */
+    flex-shrink: 0; /* 防止图片缩小 */
+}
+
+.panel-text {
+    flex: 1; /* 文本部分占据剩余空间 */
+    margin-right: 20px; /* 与图片之间的间隔 */
+    margin-left: 5px;
+}
+
+.panel-text p {
+    margin: 0 0 10px;
+    line-height: 1.6;
+
+}
+.white-panel {
+    /* 其他样式保持不变 */
+    position: relative; /* 设置为相对定位，为绝对定位的子元素提供参照 */
+    padding: 20px; /* 假设白色板块有20px的内边距 */
+}
+
+.secondary-text {
+    position: absolute; /* 使用绝对定位 */
+    bottom: 20px; /* 距离白色板块底部20px */
+    left: 20px; /* 距离白色板块左侧20px，根据padding调整 */
+    color: #ccc; /* 字体颜色设置为灰色 */
+    font-size: 0.875em; /* 根据需要调整字体大小 */
+}
+
+.panel-image {
+    /* 其他样式保持不变 */
+    margin-left: auto; /* 将图片推到容器的右侧 */
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <!-- 图片使用flex布局对齐 -->
+            <div style="display: flex; align-items: center;">
+                <a href="首页.html">
+                    <img src="学校logo.png" alt="学校logo" class="header-image" style="width: 236px; height: auto;">
+                </a>
+                <img src="组合 51.png" alt="描述性文字" class="header-image" style="width: 127px; height: auto;">
+                
+            </div>
+            <nav style="margin-left: auto; /* 将导航链接放到右侧 */">
+                <a href="导航页.html"> <!-- 替换 '你的页面链接.html' 为实际页面链接 -->
+                    <img src="汉堡图标.png" alt="菜单" class="header-image" style="width: 35px; height: 35px;">
+                </a>
+            </nav>
+        </header>
+        <!-- 主内容和页脚保持不变 -->
+        <div class="image-container" style="height: 235px;" onclick="event.stopPropagation();">
+            <div class="image-slide" id="imageSlide" style="cursor: grab; cursor: -webkit-grab;">
+                <img src="首页头图1.png" alt="Image 1" class="image" onclick="switchImage(-1)">
+                <img src="首页头图2.png" alt="Image 2" class="image" onclick="switchImage(1)">
+            </div>
+        </div>
+    </div>
+    <script>
+        var currentIndex = 0;
+        var imageWidth;
+        var imageSlide = document.getElementById('imageSlide');
+        var images = imageSlide.children;
+
+        window.onload = function() {
+            imageWidth = images[0].offsetWidth;
+        };
+
+        function switchImage(step) {
+            currentIndex = (currentIndex + step + images.length) % images.length;
+            var newTransform = 'translateX(' + (-currentIndex * imageWidth) + 'px)';
+            imageSlide.style.transform = newTransform;
+        }
+    </script>
+    <div class="white-panel">
+        <div class="panel-text">
+            <p> <a href="详情页.html" target="_blank">学校召开海洋与量子技术（国防领域）专题研讨会</a></p>
+            <p class="secondary-text">  2024/03/25</p>
+        </div>
+        <img src="新闻图1.png" alt="图片描述" class="panel-image">
+    </div>
+    <div class="white-panel">
+        <div class="panel-text">
+            <p> <a href="详情页.html" target="_blank">我校重点打造课程《写作与沟通》开发团队开展集体备课会</a></p>
+            <p class="secondary-text"> 2024/05/11</p>
+        </div>
+        <img src="新闻图2.png" alt="图片描述" class="panel-image">
+    </div>
+    <div class="white-panel">
+        <div class="panel-text">
+            <p> <a href="详情页.html" target="_blank">沿着总书记的足迹，探寻浙江高质量发展密码</a></p>
+            <p class="secondary-text"> 2023/03/25</p>
+        </div>
+        <img src="新闻图3.png" alt="图片描述" class="panel-image">
+    </div>
+    <div class="white-panel">
+        <div class="panel-text">
+            <p> <a href="详情页.html" target="_blank">校领导带队赴浙江大学调研交流</a></p>
+            <p class="secondary-text"> 2016/08/02</p>
+        </div>
+        <img src="新闻图4.jpg" alt="图片描述" class="panel-image">
+    </div>
+             
+  
+</body>
+</html>
